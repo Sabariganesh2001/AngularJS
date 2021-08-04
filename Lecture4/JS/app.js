@@ -1,5 +1,5 @@
 'use strict'
 (function(){
-    angular.module("MyFirstApp")
+    angular.module("MyFirstApp",[])
     .controller("MyFirstController");
 })();
