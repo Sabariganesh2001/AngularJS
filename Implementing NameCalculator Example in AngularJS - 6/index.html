@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MyFirstApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +7,13 @@
     <script src="./JS/jQuery.js"></script>
     <script src="./JS/angular.js"></script>
     <script src="./JS/app.js"></script>
-    <title></title>
+    <title>Name Calculator</title>
 </head>
-<body>
-    <div ng-controller="MyFirstController">
-        <h2> Welcome to lecture 5 </h2>
-        <input type="text" placeholder="Enter your name" ng-model='name'>
-        <p ng-show='name'>{{greetings(name)}}</p>
+<body ng-app='Name Calculator'>
+    <div ng-controller="nameCalculatorController">
+        <h2> Name Calculator </h2>
+        <input type="text" placeholder="Enter your name" ng-model='name' ng-keyup='displayResult()'/>
+        <p ng-show='result'>Total numeric value of given name is --> {{result}}</p>
     </div>   
 </body>
 </html>
