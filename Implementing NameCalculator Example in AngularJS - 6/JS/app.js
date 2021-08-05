@@ -1,5 +1,5 @@
-// 'use strict'
 (function(){
+    'use strict'
     angular.module("Name Calculator",[]).controller("nameCalculatorController",function($scope){
         $scope.name = "";
         $scope.result = 0;
