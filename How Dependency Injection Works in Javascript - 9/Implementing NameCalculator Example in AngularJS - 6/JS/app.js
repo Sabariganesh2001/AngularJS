@@ -13,9 +13,9 @@
         console.log(demo.toString());
         // So by thus we take the functions and parse it and locate the arguments by using '(' , ')', ',' .   
     })
-    // Angular also uses this same trick to get the servies (eg: $scope. &filter) that we given as the argument in the controller function. For this it uses $injector service to got the service arguments that we given in the controller function.
+    // Angular also uses this same trick to get the services (eg: $scope. &filter) that we given as the argument in the controller function. For this it uses $injector service to got the service arguments that we given in the controller function.
     .controller("angularDemo",angularDemo)    
-    function angularDemo($scope,$filter,$injector){  
-        console.log($injector.annotate(angularDemo));                             
+    function angularDemo($scope,$filter,$injector){    //'$'refers to service.
+        console.log("Dependencies-->"+$injector.annotate(angularDemo));                             
     };   
 })();
