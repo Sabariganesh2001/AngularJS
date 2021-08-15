@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MsgApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression and interpolation</title>
+</head>
+<body>
+    <div ng-controller="MsgAppController">
+        <h1>Expression and interpolation</h1>
+        <p>Message:</p>
+        <p>{{message}}</p> <!-- here message is Interpolation as the given string is evaluated and replaced by it's corresponding values--> <!-- And the whole '{{}}' is the expression that is evaluated to some values-->
+        <p>by {{name}}</p>    
+        <!-- If the expression have type error or reference error it will not through any error perhaps it left it blank -->
+        {{nam}} will send {{pay}} or {{rupPay | currency : '₹ ' : 3}}
+    </div>
+
+    <script src="./JS/jQuery.js"></script>
+    <script src="./JS/angular.js"></script>
+    <script src="./JS/app.js"></script>
+</body>
+</html>
