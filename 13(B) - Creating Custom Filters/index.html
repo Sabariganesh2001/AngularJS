@@ -13,7 +13,7 @@
         <p>{{message}}</p>
         <p>Modified message -> {{modMessage}}</p>
         <p>Replaced message -> {{message | replace : "Hello" : "Hi"}}</p> 
-        <p>Chained filter message -> {{message | good | uppercase}}</p>
+        <p>Chained filter message -> {{message | good | uppercase}}</p> <!--In chaining the filters the result of the first filter is pass to the second filter and so on.-->
         <p>by {{name}}</p>      
     </div>
 
