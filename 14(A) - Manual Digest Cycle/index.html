@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CounterApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./JS/jQuery.js"></script>
+    <script src="./JS/angular.js"></script>
+    <script src="./JS/app.js"></script>
+    <title>Manual Digest Cycle</title>
+</head>
+<body>
+    <h2> Manual Digest Cycle </h2>
+    <div ng-controller="CounterController">
+        <button ng-click="showNumberOfWatches()">Count of watchers</button>
+        <p>Below button event is not set for watchers, So clicing this button will not affect the watchers</p> 
+        <button ng-click="upOneCount">up one count</button>
+        <p>Below button event is set for watchers manually, So clicing this button will affect the watchers</p>
+        <button ng-click="upOneCountWithWatcher()">One Count With Watcher</button>
+        <button ng-click="incrementCounter()">Increment Count With Watcher</button>
+    </div>   
+</body>
+</html>
