@@ -1,0 +1,15 @@
+
+If, inside the angle application, you use the regular method of catching those events and handling them in a regular JavaScript fashion, the Angular app will not know that anything happened in our page. 
+
+if we use the special directives, as they're called, Like ng-keyup or ng-click. Which are events that are synonymous with the regular click and keyup events
+When we use ng-keyup or ng-click, those keyup and click events will be handled by some handler that we bound to those events in the Angular Context.In other words, those handlers that are declared on the $scope orthe scope service.But things don't stop there. 
+
+The Angular Context, or the $scope, has a special array of watchers that goes through every property on which a watch has been set up, to check if any of the properties have changed as a result of the event that just happened. Angular kicks off that process with a special function called $digest
+
+There are a number of ways to trigger Angular to automatically set up these watchers for the properties we've defined on the $scope. One that we've seen already is when you surround a scope property with double curly braces in your HTML. Another is when you specify ng-model equal to some scope property. In both circumstances, Angular will set up a function to watch for these changes to those properties. That function is called a watcher. 
+
+The digest goes through all the watchers and checks that everything is unchanged. If truly unchanged, the loop ends. If something has changed, Angular goes through the whole list of watchers once again. This keeps repeating until all the watchers report that no changes occurred. So most of the time this loop runs twice. Once to detect that something changed and another time to make sure nothing has changed. The iteration over the watchers is called the digest loop, and the whole procedure is called the digest cycle.
+
+So, why does the loop have to run yet another time to verify everything is unchanged? Well, that's because one change can trigger something else to change and the digest cycle won't be able to detect it on the first try. So for example, the change to property number 3 may trigger something that changes the value of property number 2. If at that point Angular already checked property 2 and didn't see any changes, it wont know that it actually changed until another time through the loop. This process is actually very common in game development and is called dirty checking. 
+
+Once the final digest loop runs and verifies that nothing has changed in any of the watchers, Angular updates the DOM with whatever values have changed, repaints parts of the page and you see the updated page in front of you. 
