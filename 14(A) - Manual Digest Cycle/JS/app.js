@@ -20,7 +20,7 @@
             scope.$watch('oneCountWithWatcher', function(newValue,oldValue){
                 console.log(`new value : ${newValue} , old value : ${oldValue}`);
             });
-            //The above watcher function is execute only om intially and when the value of the given property is changes that means above function will only execute in maximum of 2 times one at intial loading and another one in when that's button is clicked as the digest cycle will not see any changes further to fire up the function.
+            //The above watcher function is execute only on intially and when the value of the given property is changes that means above function will only execute in maximum of 2 times one at intial loading and another one in when that's button is clicked as the digest cycle will not see any changes further to fire up the function.
 
         //Another Event with watchers 
             scope.counter = 0; 
