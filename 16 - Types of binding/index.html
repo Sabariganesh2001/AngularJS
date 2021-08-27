@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="Types of Binding">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./JS/jQuery.js"></script>
+    <script src="./JS/angular.js"></script>
+    <script src="./JS/app.js"></script>
+    <title>Types of Binding</title>
+</head>
+<body>
+    <h2> Types of Binding </h2>
+    <div ng-controller="binding">
+        <button ng-click="showNumberOfWatches()">Show no.of watches</button>
+        <button ng-click="logFirstName()">Log First Name</button>
+        <button ng-click="logFullName()">Log Full Fame</button>
+        <br>
+        <br>
+        <br>
+        <!-- Syntax for one way binding is prefix the scope variable by "::" -->
+        Full name is {{::fullName}} 
+        <br>
+        <br>
+        <input type="text" ng-model="firstName">
+        <button ng-click="setFullName()">Set Full Fame</button> 
+    </div>   
+
+</body>
+</html>
