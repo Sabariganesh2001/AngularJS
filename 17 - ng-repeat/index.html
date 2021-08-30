@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Shopping List">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-repeat</title>
+</head>
+<body>
+    <div ng-controller="ShoppingListController">
+        <h1>Shopping List</h1>
+        <h2>List 1</h2>
+        <ul>
+            <li ng-repeat="item in list1">{{item}}</li>
+        </ul>
+        <br>
+        <h2>List 2</h2>
+        <ul>
+            <li ng-repeat="item in list2">{{item.quantity}} of {{item.name}}</li> 
+        </ul>
+        <p>If we change the object value the above list data is also vary as it is setted for watcher.</p>
+        <div>
+            Try -> <input type="text" ng-model="list2[0].quantity"> 
+        </div>         
+        <br>
+        <h2>List1 with $index property</h2>
+        <ul>
+            <li ng-repeat="item in list1" style="list-style-type: none;">{{$index+1 }}) {{item}}</li>  
+        </ul>
+        <br>
+        <h2>Add extra item to list1 (Will affect the all Elements that uses this array as we set the watcher for it)</h2> 
+        <input type="text" placeholder="Enter the name of an item" ng-model="newItem">
+        <button ng-click="addToList(newItem)">Add Item</button>
+        <ul>
+            <li ng-repeat="item in list1" style="list-style-type: none;">{{$index+1 }}) {{item}}</li>  
+        </ul>
+    </div>
+
+    <script src="./JS/jQuery.js"></script>
+    <script src="./JS/angular.js"></script>
+    <script src="./JS/app.js"></script>
+</body>
+</html>
