@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Shopping List">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-repeat</title>
+</head>
+<body>
+    <div ng-controller="ShoppingListController">
+        <h1>Shopping List</h1>
+        <h2>List 1</h2>
+        <ul>
+            <input type="text" ng-model="search">
+            <br>   
+            <br>
+            <li ng-repeat="item in list1 | filter:search">{{item}}</li>
+        </ul>
+        
+    </div>
+
+    <script src="./JS/jQuery.js"></script>
+    <script src="./JS/angular.js"></script>
+    <script src="./JS/app.js"></script>
+</body>
+</html>
